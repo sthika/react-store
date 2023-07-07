@@ -1,13 +1,143 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    font-family: 'Assistant', sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 172%;
+    letter-spacing: 0.64px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    background-color: transparent;
+}
+
+.container {
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: 0;
+}
+
+.header__wrapper {
+    padding: 27px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    line-height: 150%;
+    letter-spacing: 0.28px;
+
+}
+
+.header__wrap-left {
+    display: flex;
+    gap: 51px;
+}
+
+.header__nav {
+    display: flex;
+    gap: 16px;
+}
+
+.header__icons {
+    display: flex;
+    gap: 24px;
+}
+
+.header__logo {
+    width: 90px;
+    height: 22px;
+}
+
+.header__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header__icon {
+    width: 20px;
+    height: 20px;
+}
+
+.header__icon img {
+    width: 100%;
+    height: 100%;
+}
+
+/* main */
+.main {
+    background-image: url(../public/images/main-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 616px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main__wrapper {
+    display: flex;
+    width: 464px;
+    padding: 40px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.50);
+    color: white;
+
+}
+
+.main__title {
+    font-size: 52px;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.main__subtitle {
+    font-size: 16px;
+    line-height: 172%;
+    letter-spacing: 0.64px;
+}
+.main__btn {
+    padding: 16px;
+    border: 1px solid white;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+
+.catalog__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 64px;
+    gap: 10px;
+}
+.catalog__card {
+    width: 24%;
+}
+.catalog__img {
+    width: 261px;
+height: 272px;
+padding: 50px;
+}
+.catalog__img img {
+    width: 100%;
+height: 100%;
+object-fit: contain;
 }
