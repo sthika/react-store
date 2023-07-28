@@ -1,10 +1,15 @@
 import React from 'react'
 
-const Card = ({ info }) => {
+const Card = ({el, setCardState, setCardId}) => {
+    const handleCardBtn = () => {
+        setCardState()
+        setCardId(el.id)
+    }
 
     return (
-            info.map((el) => (
+
                 <div className="catalog__card">
+                    
                    
                     <div className="catalog__img">
                         <img src={el.image} alt="" />
@@ -12,8 +17,8 @@ const Card = ({ info }) => {
 
                     <p className="card__title">{el.title}</p>
                     <p className="card__price">${el.price} USD</p>
+                    <button className='card__btn' onClick={handleCardBtn}>Details</button>
                 </div>
-            ))
         
     )
 }
