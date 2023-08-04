@@ -8,10 +8,16 @@ const Cart = () => {
 
 useEffect(() => {
   setProductsToBuy(JSON.parse(localStorage.getItem('products')) || [])
-}, [])
+}, [productsToBuy])
 
 
-
+const handleDeleteOne =(el, idx) => {
+  const updateArr = productsToBuy.filter((i) => i !== el)
+  localStorage.setItem(
+    'products',
+    JSON.stringify([...updateArr])
+  );
+}
   const removeAll = () => {
     localStorage.clear();
   };
@@ -22,7 +28,7 @@ useEffect(() => {
         <h1 className='cart__header'>Корзина</h1>
         {productsToBuy.length ? (
           <div className='cart__products'>
-            {productsToBuy.map((el) => (
+            {productsToBuy.map((el, idx) => (
               <div className='cart__product'>
                 <div className='cart__image'>
                   <img src={el.image} alt={el.title} />
@@ -36,7 +42,7 @@ useEffect(() => {
                   <p className='cart__value-count'>count: {el.count}</p>
                   <p className='cart__value-price'>{el.price}</p>
                 </div>
-                <div className='cart__product-delete'>
+                <div onClick={()=> {handleDeleteOne(el, idx)}} className='cart__product-delete'>
                   <i class='fa-solid fa-xmark cart__icon-delete'></i>
                 </div>
               </div>
