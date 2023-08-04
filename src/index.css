@@ -33,7 +33,9 @@ button {
     padding: 5px 10px;
     border-radius: 25px;
 }
-
+.active {
+    font-weight: bold;
+}
 .container {
     max-width: 1230px;
     padding: 0 15px;
@@ -141,24 +143,78 @@ select{
     text-align: center;
 }
 .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(66, 66, 66, 0.3);
+    z-index: 5;
+  }
+  
+  .modal__wrapper {
+    padding: 50px;
     position: absolute;
-    transform: translate(-50%);
-    padding: 30px;
-    top: 20%;
+    display: flex;
     left: 50%;
-    width: 60%;
-    height: 70%;
-    background-color: wheat;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    background-color:wheat;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    justify-content: center;
     align-items: center;
-}
+    gap: 15px;
+  }
+  
 .fa-solid {
     content: "\f00d";
     top: 20px;
     right: 20px;
     position: absolute;
     font-size: 30px;
+}
+.modal__btn {
+    width: 20%;
+}
+.modal__btn:hover {
+    transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.304)
+}
+.cart {
+    padding: 50px;
+}
+.cart__header {
+    margin: 50px;
+}
+.cart__products {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cart__product {
+    padding: 10px;
+display: flex;
+justify-content: space-around;
+}
+.cart__image {
+    width: 20%;
+    height: 300px;
+    overflow: hidden;
+}
+.cart__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cart__desc {
+    max-width: 60%;
+}
+.cart__icon-delete {
+    position:static;
+}
+.modal__counter {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 20px;
 }

@@ -1,9 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-
-const LoginForm = ({ loginBtnIsActive, setLoginBtnState}) => {
-
+const LoginForm = ({ loginBtnIsActive, setLoginBtnState }) => {
   return loginBtnIsActive ? (
     <div className='login'>
       <h2 className='login__title'>Login</h2>
@@ -32,7 +30,10 @@ const LoginForm = ({ loginBtnIsActive, setLoginBtnState}) => {
       </form>
       <p>
         Don't have an account yet?{' '}
-        <NavLink to='/signup' className='login__link' onClick={setLoginBtnState}>
+        <NavLink
+          to='/signup'
+          className='login__link'
+          onClick={setLoginBtnState}>
           Sign Up
         </NavLink>
       </p>

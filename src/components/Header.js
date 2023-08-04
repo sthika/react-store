@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './logo.png';
 import LoginForm from './LoginForm';
+import Cart from './Cart';
 
-const Header = ({loginBtnIsActive, setLoginBtnState}) => {
-
+const Header = ({ loginBtnIsActive, setLoginBtnState }) => {
   return (
     <header className='header'>
       <div className='container'>
@@ -25,9 +25,17 @@ const Header = ({loginBtnIsActive, setLoginBtnState}) => {
             <NavLink to='/about' className='header__link'>
               About
             </NavLink>
+            <NavLink to='/cart' className='header__link'>
+              Cart
+            </NavLink>
           </div>
-          <button className='header__sign-up'  onClick={setLoginBtnState}>Login</button>
-          <LoginForm loginBtnIsActive={loginBtnIsActive} setLoginBtnState={setLoginBtnState}/>
+          <button className='header__sign-up' onClick={setLoginBtnState}>
+            Login
+          </button>
+          <LoginForm
+            loginBtnIsActive={loginBtnIsActive}
+            setLoginBtnState={setLoginBtnState}
+          />
         </div>
       </div>
     </header>
